@@ -1,0 +1,64 @@
+/* CSS declarations go here */
+.workshop{
+    margin-top: 30px;
+}
+.entry{
+    width: 300px;
+}
+.navbar-text{
+    color: white;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.fltright{
+    float: inherit;
+}
+.topline{
+    border-top: 1px solid gray;
+}
+.btmline{
+    border-bottom: 1px solid gray;
+}
+.top-bar{
+    background-color: #255296;
+}
+.waBlue {
+    background: #255296 !important;
+}
+.top-bar-section ul li {
+    background: none;
+}
+#logo{
+     width: 300px;
+     margin-top: 20px;
+}
+.ital{
+     font-style: italic;
+     font-family: 'Times New Roman', Times, serif;
+}
+h4{
+    font-family: 'Times New Roman', Times, serif;
+}
+h3{
+     font-style: italic;
+     font-family: 'Times New Roman', Times, serif;
+     font-weight: bold;
+}
+.credited{
+    margin-top: 25px;
+}
+.bold{
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+.footer{
+    margin-top: 160px;
+    width: 440px;
+}
+#certif{
+    margin-top: 40px;
+}
+

@@ -1,0 +1,47 @@
+<template name='myWorkshops'>
+    <div class="workshop">
+        <div class="row">
+            <div class="large-8 large-centered columns">
+            <div class="row btmline">
+                <div class="medium-6 columns">
+                    <p>Workshop Title</p>
+                </div>
+                <div class="medium-4 columns">
+                    <p class="fltright">Credit Value</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    {{#each myWorkshops}}
+    <div class="workshop">
+        <div class="row">
+            <div class="large-8 large-centered columns">
+            <div class="row btmline">
+                <div class="medium-6 columns">
+                    <p>{{title}}</p>
+                </div>
+                <div class="medium-4 columns">
+                    <p class="fltright">{{creditValue}}</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    <div class="workshop">
+        <div class="row">
+            <div class="large-8 large-centered columns">
+            <div class="row">
+                <div class="medium-6 columns">
+                    <p>Total Credits:</p>
+                </div>
+                <div class="medium-4 columns">
+                    <p class="fltright">{{total}}</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</template>
+

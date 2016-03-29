@@ -1,0 +1,14 @@
+<body>
+    {{renderPage}}
+</body>
+
+<template name='layout'>
+    {{> navbar}}
+    <div class="row">
+        <div class="large-12 column">
+            {{> yield}}
+            {{> tooltips}}
+        </div>
+    </div>
+    
+</template>

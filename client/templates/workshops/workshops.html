@@ -1,0 +1,46 @@
+<template name='workshops'>
+    <div class="workshop">
+    <div class="row">
+        <div class="large-8 large-centered columns">
+        <div class="row btmline">
+            <div class="medium-6 columns">
+                <h2 class="inline">Workshop Title</h2>
+            </div>
+            <div class="medium-2 columns">
+            <div class="row collapse">
+                <div class="medium-8 columns">
+                <p class="">Workshop Verification Code</p>
+                </div>
+                <div class="medium-4 columns">
+               
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    {{#each workshops}}
+    <form class="workshop">
+    <div class="row">
+        <div class="large-8 large-centered columns">
+        <div class="row">
+            <div class="medium-6 columns">
+                <p class="inline">{{title}}</p>
+            </div>
+            <div class="medium-2 columns">
+            <div class="row collapse">
+                <div class="medium-8 columns">
+                <input class='text' type="text" name="text" placeholder="">
+                </div>
+                <div class="medium-4 columns">
+                <button class="button postfix">add</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </form>
+    {{/each}}
+</template>
