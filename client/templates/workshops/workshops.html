@@ -1,6 +1,15 @@
 <template name='workshops'>
     <div class="workshop">
     <div class="row">
+        <label class="small-3" for="customDropdown1">Filter By Workshop Date
+            <select id="customDropdown1" class="medium">
+              <option id="option" value="">Select Workshop Date</option>
+              <option id="option" value="all">All Workshops</option>
+              <option id="option" value="wednesday">Wednesday 5/11/16</option>
+              <option id="option" value="thursday">Thursday 5/12/16</option>
+              <option id="option" value="friday">Friday 5/13/16</option>
+            </select>
+          </label>
         <div class="large-8 large-centered columns">
         <div class="row btmline">
             <div class="medium-6 columns">
@@ -20,6 +29,7 @@
         </div>
     </div>
     </div>
+  
     {{#each workshops}}
     <form class="workshop">
     <div class="row">
@@ -43,4 +53,5 @@
     </div>
     </form>
     {{/each}}
+ 
 </template>

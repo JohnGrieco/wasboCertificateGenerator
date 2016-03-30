@@ -1,7 +1,26 @@
 Template.workshops.helpers({
    workshops: function(){
+       
+       var now = Session.get('currentValue');
+       
+       if(now === 'wednesday'){
+           return Workshops.find({day: 'wednesday'});
+       }
+       else if(now === 'thursday'){
+           return Workshops.find({day: 'thursday'});
+       }
+       else if(now === 'friday'){
+           return Workshops.find({day: 'friday'});
+       }
+       else if(now === 'all' || ''){
+           return Workshops.find({});
+       }else{
+           return Workshops.find({});
+       }
+   },
+   thursday: function(){
        return Workshops.find({});
-   } 
+   }
 });
 
 Template.workshops.events({
@@ -21,6 +40,12 @@ Template.workshops.events({
         
         event.target.text.value = "";
         return false;
+    },
+    "change #customDropdown1": function(event, template){
+        var selectValue = template.$("#customDropdown1").val();
+        Session.set('currentValue', selectValue);
+        var selected = Session.get('currentValue');
+        console.log(selected);
     }
     
     
