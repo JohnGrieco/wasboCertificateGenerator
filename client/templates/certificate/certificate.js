@@ -7,6 +7,10 @@ Template.certificate.helpers({
             total += UserWorkshops.find({userId: Meteor.userId()}).fetch()[i].creditValue;
         
         }
+        if(total > 16){
+            total = 16;
+            return total;
+        }
         return total;
    },
    first: function(){

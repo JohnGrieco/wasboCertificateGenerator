@@ -1,37 +1,47 @@
 <template name='workshops'>
     <div class="workshop">
-    <div class="row">
-        <label class="small-3" for="customDropdown1">Filter By Workshop Date
-            <select id="customDropdown1" class="medium">
-              <option id="option" value="">Select Workshop Date</option>
-              <option id="option" value="all">All Workshops</option>
-              <option id="option" value="wednesday">Wednesday 5/11/16</option>
-              <option id="option" value="thursday">Thursday 5/12/16</option>
-              <option id="option" value="friday">Friday 5/13/16</option>
-            </select>
-          </label>
-        <div class="large-8 large-centered columns">
-        <div class="row btmline">
-            <div class="medium-6 columns">
-                <h2 class="inline">Workshop Title</h2>
+        <div class="row">
+            <div class="searchForm large-8 large-centered columns">
+                
+                    <label class="medium-4 columns" for="customDropdown1">Filter By Workshop Date
+                        <select id="customDropdown1" class="medium">
+                            <option id="option" value="">Select Workshop Date</option>
+                            <option id="option" value="all">All Workshops</option>
+                            <option id="option" value="wednesday">Wednesday 5/11/16</option>
+                            <option id="option" value="thursday">Thursday 5/12/16</option>
+                            <option id="option" value="friday">Friday 5/13/16</option>
+                        </select>
+                    </label>
+                <label class="left medium-4 columns" for="search">Search Workshop Titles
+                    <form id="search" class="medium">
+                        <input type="text" id="searchValue" placeholder="Enter search terms here."/>
+                    </form>
+                </label>  
             </div>
-            <div class="medium-2 columns">
-            <div class="row collapse">
-                <div class="medium-8 columns">
-                <p class="">Workshop Verification Code</p>
+        </div>    
+        <div class="row">
+            <div class="large-8 large-centered columns">
+            <div class="row btmline">
+                <div class="medium-6 columns">
+                    <h2 class="inline">Workshop Title</h2>
                 </div>
-                <div class="medium-4 columns">
-               
+                <div class="medium-2 columns">
+                <div class="row collapse">
+                    <div class="medium-8 columns">
+                    <p class="">Workshop Verification Code</p>
+                    </div>
+                    <div class="medium-4 columns">
+                
+                    </div>
+                </div>
                 </div>
             </div>
             </div>
         </div>
-        </div>
-    </div>
     </div>
   
     {{#each workshops}}
-    <form class="workshop">
+    <form id='code' class="workshop">
     <div class="row">
         <div class="large-8 large-centered columns">
         <div class="row">
