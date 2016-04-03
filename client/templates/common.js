@@ -14,7 +14,7 @@ Meteor.startup(function(){
    
     AutoForm.addHooks(['insertNamesForm'],{
         onSuccess: function() {
-            location.reload(true);
+            //location.reload(true);
             $(document).foundation();
             $(document).ready(function(){$('#myModal').foundation('reveal', 'close')});
         }
