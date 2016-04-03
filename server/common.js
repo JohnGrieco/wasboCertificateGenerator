@@ -8,20 +8,52 @@ if(Meteor.isServer) {
     Houston.add_collection(UserWorkshops);
     Houston.add_collection(Meteor.users);
     Houston.add_collection(Houston._admins);
-    Houston.add_collection(Names); 
+    Houston.add_collection(Names);
+    Houston.add_collection(Final); 
 }
-    Meteor.methods({
-        total: function(){
-            var total = 0;
+Meteor.methods({
+    total: function(){
+        var total = 0;
             
-            for(var i = 0; i < UserWorkshops.find({userId: Meteor.user()._id}).fetch().length; i++){
+        for(var i = 0; i < UserWorkshops.find({userId: Meteor.user()._id}).fetch().length; i++){
                         
-                total += UserWorkshops.find({userId: Meteor.userId()}).fetch()[i].creditValue;
+            total += UserWorkshops.find({userId: Meteor.userId()}).fetch()[i].creditValue;
         
-            }
-            return total;
-   }
+        }
+        return total;
+    },
+    final: function(){
+        
+        var name = Names.findOne({userId: Meteor.user()._id}).first + ' ' + Names.findOne({userId: Meteor.user()._id}).last;
+        var email = Meteor.user().emails[0].address;
+        var attend = [];
+        for(var i = 0; i < UserWorkshops.find({userId: Meteor.user()._id}).fetch().length; i++){
+            var temp = UserWorkshops.find({userId: Meteor.userId()}).fetch()[i].title;
+            attend.push(temp);
+        }
+        //var attend = UserWorkshops.find({userId: Meteor.userId()}).fetch();
+        var district = Names.findOne({userId: Meteor.user()._id}).district;
+        //var idid = Final.findOne({email: Meteor.user().emails[0].address})._id;
+        
+        if(Final.findOne({email: Meteor.user().emails[0].address}) === undefined){
+            Final.insert({name: name, email: email, district: district, attendedWorkshops: attend });
+        }
+        else{
+            var idid = Final.findOne({email: Meteor.user().emails[0].address})._id;
+            Final.update({_id: idid},{$set: {name: name, email: email, district: district, attendedWorkshops: attend} });
+        }
+        //Final.insert({name: name, email: email, attendedWorkshops: attend, district: district });
+        //var idid = Final.findOne({email: Meteor.user().emails[0].address})._id;
+        
+        //Final.update({_id: idid},{$set: {name: name, email: email, attendedWorkshops: attend, district: district} });
+        
+    }
+
   });
+
+Meteor.publish('final', function(){
+   return final.find(); 
+});
   
 Meteor.publish("userWorkshops", function(){
     return UserWorkshops.find();

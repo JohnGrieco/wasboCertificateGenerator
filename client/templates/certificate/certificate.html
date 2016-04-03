@@ -15,7 +15,10 @@
             $(document).ready(function(){$('#myModal').foundation('reveal', 'open')});
         }
         
+        
+        
         function getPDF(){
+            Meteor.call('final');
             
             
             var docDefinition = { pageSize: 'LETTER', content: [ {
@@ -29,7 +32,8 @@
        fontSize: 20
      }}
             };
-            pdfMake.createPdf(docDefinition).download('wasboCertificate.pdf');
+            //pdfMake.createPdf(docDefinition).download('wasboCertificate.pdf');
+            pdfMake.createPdf(docDefinition).open('wasboCertificate.pdf');
         }
     </script>
     

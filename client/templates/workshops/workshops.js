@@ -6,8 +6,6 @@ Template.workshops.helpers({
        Meteor.subscribe("workshops", Session.get("searchValue"));
        
        if (Session.get("searchValue")) {
-           console.log(Session.get("searchValue"));
-           //return Workshops.find({day: 'wednesday'});
            return Workshops.find({}, { sort: [["score", "desc"]] });
        }
        else if(now === 'wednesday'){
@@ -35,16 +33,18 @@ Template.workshops.events({
         if(Number(input) === this.code && UserWorkshops.findOne({userId: Meteor.userId(), title: this.title}) === undefined){
  
             UserWorkshops.insert({title: this.title, creditValue: this.creditValue, userId: Meteor.userId()});
-            alert("This Workshop has been added to your Workshop's");    
+            //alert("This Workshop has been added to your Workshop's");
+            sAlert.success("This Workshop has been added to your Workshop's");  
 
         }
         else if(Number(input) === this.code && UserWorkshops.findOne( {userId: Meteor.userId(), title: this.title } ) !== undefined){
             
-            alert('You have already added this workshop.');
+            //alert('You have already added this workshop.');
+            sAlert.error('You have already added this workshop.');
             
         }else{
             
-            alert('Incorrect Workshop Code, please try again.');
+           sAlert.error('Incorrect Workshop Code, please try again.');
             
         }
         
