@@ -1,7 +1,15 @@
 if(Meteor.isServer) {
     
     Meteor.startup(function() {
-       process.env.Mail_URL = 'smtp://postmaster%40sandbox95002c85725649aaa02ca6b3cd3d58f1.mailgun.org:a8f98fa860198a1f40da28362b6d264b@smtp.mailgun.org:587'; 
+        
+        smtp = {
+            username: 'postmaster%40sandbox95002c85725649aaa02ca6b3cd3d58f1.mailgun.org',
+            password: 'a8f98fa860198a1f40da28362b6d264b',
+            server: 'smtp.mailgun.org',
+            port: 587
+        }
+
+        process.env.MAIL_URL = 'smtp://' + encodeURIComponent(smtp.username) + ':' + encodeURIComponent(smtp.password) + '@' + encodeURIComponent(smtp.server) + ':' + smtp.port; 
        
     });
     
