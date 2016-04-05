@@ -9,7 +9,8 @@ Meteor.startup(function(){
       dashboardRoute: '/',
       requirePasswordConfirmation: false,
       waitEmailVerification: false,
-      passwordSignupFields: 'EMAIL_ONLY'
+      passwordSignupFields: 'EMAIL_ONLY',
+      //sendVerifcationEmail: true
    });
    
     AutoForm.addHooks(['insertNamesForm'],{

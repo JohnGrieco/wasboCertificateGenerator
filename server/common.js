@@ -1,5 +1,10 @@
 if(Meteor.isServer) {
     
+    Meteor.startup(function() {
+       process.env.Mail_URL = 'smtp://postmaster%40sandbox95002c85725649aaa02ca6b3cd3d58f1.mailgun.org:a8f98fa860198a1f40da28362b6d264b@smtp.mailgun.org:587'; 
+       
+    });
+    
     Workshops._ensureIndex({
         'title': 'text'
     });
@@ -10,6 +15,7 @@ if(Meteor.isServer) {
     Houston.add_collection(Houston._admins);
     Houston.add_collection(Names);
     Houston.add_collection(Final); 
+    
 }
 Meteor.methods({
     total: function(){
