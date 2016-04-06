@@ -1,5 +1,10 @@
 if(Meteor.isServer) {
     
+    Router.route( "/loaderio-d81bed7422135cbfe4f47fe70ef241ee", { where: "server" } ).get(function(){
+        var token = 'loaderio-d81bed7422135cbfe4f47fe70ef241ee';
+        this.response.end(token);
+    });
+    
     Meteor.startup(function() {
         
         smtp = {
