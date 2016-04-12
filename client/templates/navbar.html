@@ -1,5 +1,6 @@
 <template name='navbar'>
-    <nav class="top-bar" data-topbar role="navigation">
+<div class="fixed">
+ <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
       <h1><a href="/">WASBO Certificate Generator</a></h1>
@@ -15,11 +16,16 @@
     </ul>
 
     <!-- Left Nav Section -->
-    <ul class="left">
-      <li><a class="waBlue" href="/">Workshops</a></li>
-      <li><a class="waBlue" href="{{pathFor 'myWorkshops'}}">My Workshops</a></li>
-      <li><a class="waBlue" href="{{pathFor 'certificate'}}">Generate Certificate</a></li>
+    <ul class="left waBlue">
+      <li class="waBlue"><a class="waBlue" href="/">Workshops</a></li>
+      <li class="waBlue"><a class="waBlue" href="{{pathFor 'myWorkshops'}}">My Workshops</a></li>
+      <li class="waBlue"><a class="waBlue" href="{{pathFor 'certificate'}}">Generate Certificate</a></li>
     </ul>
   </section>
 </nav>
+</div>
+<script>
+     $(document).foundation();
+</script>
 </template>
+
