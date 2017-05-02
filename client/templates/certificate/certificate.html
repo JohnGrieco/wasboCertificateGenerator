@@ -1,28 +1,28 @@
 <template name='certificate'>
     <a href="javascript:getPDF()" class="button alert">Download Certificate</a>
-    
+
     <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <center><h2 id="modalTitle">Please enter your first and last name:</h2></center>
              {{> quickForm collection="Names" id="insertNamesForm" type="insert"}}
               <a class="close-reveal-modal" aria-label="Close">&#215;</a>
     </div>
-   
-    
-    
+
+
+
     <script type="text/javascript">
         if(Names.findOne({userId: Meteor.user()._id}) === undefined){
             $(document).foundation();
             $(document).ready(function(){$('#myModal').foundation('reveal', 'open')});
         }
-        
-        
-        
+
+
+
         function getPDF(){
             Meteor.call('final');
             Meteor.call('pdf');
         }
     </script>
-    
+
     <div id="certif" class="row cert">
         <center><img class="medium-4" align='middle' id="logo" src="img/logo.png" alt=""></center>
     </div>
@@ -38,10 +38,10 @@
     <h3 class="text-center">{{first}} {{last}}</h3>
     <br>
     <h4 class="text-center">has attended and successfully completed Professional Development and Training at the</h4>
-    <h3 class='text-center credited'>2016 WASBO Annual Conference</h3>
-    <h4 class='text-center credited'>May 11– 13, 2016 Tacoma Convention Center, Tacoma WA</h4>
+    <h3 class='text-center credited'>2017 WASBO Annual Conference</h3>
+    <h4 class='text-center credited'>May 10– 12, 2017 Spokane Convention Center, Spokane WA</h4>
     <h4 class="text-center credited">and is credited with  <span class="bold">{{ total }}</span>  CPE/Clock Hours</h4>
     <img  class="footer" src="img/footer.png" alt="">
-    
-    
+
+
 </template>

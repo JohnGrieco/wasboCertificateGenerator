@@ -5,7 +5,7 @@ Meteor.subscribe('names');
 Meteor.startup(function(){ 
     
    AccountsEntry.config({
-      homeRoute: '/sign-in',
+      homeRoute: '/',
       dashboardRoute: '/',
       requirePasswordConfirmation: false,
       waitEmailVerification: false,
